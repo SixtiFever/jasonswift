@@ -1,0 +1,251 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    animation-name: cosmicBackground;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+/* animations */
+
+@keyframes cosmicBackground {
+    0% { background-color: #04040c; }
+    1% { background-color: #04040c; }
+    2% { background-color: #04040c; }
+    3% { background-color: #04040b; }
+    4% { background-color: #04040b; }
+    5% { background-color: #04040b; }
+    6% { background-color: #04040b; }
+    7% { background-color: #04040b; }
+    8% { background-color: #04040b; }
+    9% { background-color: #03030a; }
+    10% { background-color: #03030a; }
+    11% { background-color: #03030a; }
+    12% { background-color: #03030a; }
+    13% { background-color: #03030a; }
+    14% { background-color: #030309; }
+    15% { background-color: #030309; }
+    16% { background-color: #030309; }
+    17% { background-color: #030309; }
+    18% { background-color: #030309; }
+    19% { background-color: #030309; }
+    20% { background-color: #030308; }
+    21% { background-color: #030308; }
+    22% { background-color: #030308; }
+    23% { background-color: #030308; }
+    24% { background-color: #030308; }
+    25% { background-color: #030308; }
+    26% { background-color: #020207; }
+    27% { background-color: #020207; }
+    28% { background-color: #020207; }
+    29% { background-color: #020207; }
+    30% { background-color: #020207; }
+    31% { background-color: #020206; }
+    32% { background-color: #020206; }
+    33% { background-color: #020206; }
+    34% { background-color: #020206; }
+    35% { background-color: #020206; }
+    36% { background-color: #020206; }
+    37% { background-color: #020205; }
+    38% { background-color: #020205; }
+    39% { background-color: #020205; }
+    40% { background-color: #020205; }
+    41% { background-color: #020205; }
+    42% { background-color: #010104; }
+    43% { background-color: #010104; }
+    44% { background-color: #010104; }
+    45% { background-color: #010104; }
+    46% { background-color: #010104; }
+    47% { background-color: #010104; }
+    48% { background-color: #010103; }
+    49% { background-color: #010103; }
+    50% { background-color: #010103; }
+    51% { background-color: #010103; }
+    52% { background-color: #010103; }
+    53% { background-color: #010104; }
+    54% { background-color: #010104; }
+    55% { background-color: #010104; }
+    56% { background-color: #010104; }
+    57% { background-color: #010104; }
+    58% { background-color: #010104; }
+    59% { background-color: #020205; }
+    60% { background-color: #020205; }
+    61% { background-color: #020205; }
+    62% { background-color: #020205; }
+    63% { background-color: #020205; }
+    64% { background-color: #020206; }
+    65% { background-color: #020206; }
+    66% { background-color: #020206; }
+    67% { background-color: #020206; }
+    68% { background-color: #020206; }
+    69% { background-color: #020206; }
+    70% { background-color: #020207; }
+    71% { background-color: #020207; }
+    72% { background-color: #020207; }
+    73% { background-color: #020207; }
+    74% { background-color: #020207; }
+    75% { background-color: #030308; }
+    76% { background-color: #030308; }
+    77% { background-color: #030308; }
+    78% { background-color: #030308; }
+    79% { background-color: #030308; }
+    80% { background-color: #030308; }
+    81% { background-color: #030309; }
+    82% { background-color: #030309; }
+    83% { background-color: #030309; }
+    84% { background-color: #030309; }
+    85% { background-color: #030309; }
+    86% { background-color: #030309; }
+    87% { background-color: #03030a; }
+    88% { background-color: #03030a; }
+    89% { background-color: #03030a; }
+    90% { background-color: #03030a; }
+    91% { background-color: #03030a; }
+    92% { background-color: #04040b; }
+    93% { background-color: #04040b; }
+    94% { background-color: #04040b; }
+    95% { background-color: #04040b; }
+    96% { background-color: #04040b; }
+    97% { background-color: #04040b; }
+    98% { background-color: #04040c; }
+    99% { background-color: #04040c; }
+    100% { background-color: #04040c; }
+}
+
+/* shooting stars */
+
+.shootingStar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 4px rgba(255, 255, 255, 0.1),
+        0 0 0 8px rgba(255, 255, 255, 0.1),
+        0 0 20px rgba(255, 255, 255, 0.1);
+    animation: shootingStar 15s linear infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.shootingStar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(90deg, #fff, transparent);
+}
+
+@keyframes shootingStar {
+    0% {
+        transform: rotate(315deg) translateX(0);
+        opacity: 1;
+    }
+    10% {
+        opacity: 1;
+    }
+    32% {
+        transform: rotate(315deg) translateX(-1000px);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(315deg) translateX(-1000px);
+        opacity: 0;
+    }
+}
+
+.star1 {
+    composes: shootingStar;
+    top: 0;
+    right: 0;
+    left: initial;
+    animation-delay: 10s;
+}
+
+/* .star2 {
+    composes: shootingStar;
+    top: 0;
+    right: 80px;
+    left: initial;
+    animation-delay: 0.2s;
+    animation-duration: 3s;
+}
+
+.star3 {
+    composes: shootingStar;
+    top: 80px;
+    right: 0;
+    left: initial;
+    animation-delay: 0.4s;
+    animation-duration: 2s;
+}
+
+.star4 {
+    composes: shootingStar;
+    top: 0;
+    right: 180px;
+    left: initial;
+    animation-delay: 0.6s;
+    animation-duration: 1.5s;
+} */
+
+/* .star5 {
+    composes: shootingStar;
+    top: 0;
+    right: 400px;
+    left: initial;
+    animation-delay: 0.8s;
+    animation-duration: 2.5s;
+} */
+
+/* .star6 {
+    composes: shootingStar;
+    top: 0;
+    right: 600px;
+    left: initial;
+    animation-delay: 1s;
+    animation-duration: 3s;
+} */
+
+/* .star7 {
+    composes: shootingStar;
+    top: 300px;
+    right: 0;
+    left: initial;
+    animation-delay: 1.2s;
+    animation-duration: 1.75s;
+}
+
+.star8 {
+    composes: shootingStar;
+    top: 0;
+    right: 700px;
+    left: initial;
+    animation-delay: 1.4s;
+    animation-duration: 1.25s;
+} */
+
+/* .star9 {
+    composes: shootingStar;
+    top: 0;
+    right: 1000px;
+    left: initial;
+    animation-delay: 0.75s;
+    animation-duration: 2.25s;
+} */
+
+/* .star10 {
+    composes: shootingStar;
+    top: 0;
+    right: 450px;
+    left: initial;
+    animation-delay: 2.75s;
+    animation-duration: 2.75s;
+} */

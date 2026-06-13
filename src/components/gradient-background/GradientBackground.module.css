@@ -1,0 +1,36 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    inset: 0;
+    padding-top: clamp(6%, 10vh, 14%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    row-gap: clamp(1.5rem, 4vh, 3rem);
+    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+    background: linear-gradient(
+        -45deg,
+        #ff9ad5,  /* soft bubblegum pink */
+        #ffffff,  /* creamy white */
+        #9bdcff,  /* candy blue */
+        #cdb4ff,  /* pastel lavender-blue */
+        #aee6ff   /* light sky blue */
+    );
+
+    background-size: 400% 400%;
+    animation: backgroundgradient1 30s ease infinite;
+    overflow-x: hidden;
+}
+
+@keyframes backgroundgradient1 {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

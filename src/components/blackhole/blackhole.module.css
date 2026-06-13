@@ -1,0 +1,123 @@
+.blackhole {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blackhole:hover {
+    cursor: pointer;
+}
+
+/* outer accretion glow — faint wide halo */
+.accretionOuter {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 150, 50, 0.8) 0%,
+        rgba(255, 162, 75, 0.8) 20%,
+        transparent 70%
+    );
+    animation: pulseOuter 8s ease-in-out infinite;
+}
+
+/* main accretion disk — bright ring of light bending around the hole */
+.accretionDisk {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        transparent 40%,
+        rgba(255, 160, 50, 0.6) 50%,
+        rgba(255, 120, 30, 0.7) 58%,
+        rgba(255, 200, 100, 0.8) 62%,
+        rgba(255, 160, 50, 0.7) 66%,
+        rgba(255, 160, 50, 0.6) 50%,
+        transparent 85%
+    );
+    animation: rotateDisk 20s linear infinite;
+}
+
+/* inner accretion ring — tighter hot ring closest to the event horizon */
+.accretionInner {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        transparent 50%,
+        rgba(255, 200, 100, .8) 58%,
+        rgba(255, 255, 200, 1) 63%,
+        rgba(255, 200, 100, .8) 68%,
+        transparent 78%
+    );
+    animation: pulseInner 4s ease-in-out infinite;
+}
+
+/* photon sphere — faint glow at the boundary of no return */
+.photonSphere {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        transparent 60%,
+        rgba(180, 160, 255, 0.15) 70%,
+        rgba(150, 130, 255, 0.08) 80%,
+        transparent 90%
+    );
+    animation: pulseSphere 6s ease-in-out infinite;
+}
+
+/* event horizon — the pitch black core */
+.eventHorizon {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        #000000 0%,
+        #000000 70%,
+        rgba(0, 0, 0, 0.95) 85%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    box-shadow:
+        0 0 30px 10px rgba(0, 0, 0, 0.8),
+        0 0 60px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* animations */
+
+@keyframes rotateDisk {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulseOuter {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+
+@keyframes pulseInner {
+    0%, 100% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.03);
+    }
+}
+
+@keyframes pulseSphere {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
