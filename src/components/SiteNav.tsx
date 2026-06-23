@@ -14,13 +14,13 @@ export default function SiteNav() {
       </Link>
       <ul className="nav-links">
         <li>
-          <a href={sectionHref('#about', pathname)}>About</a>
-        </li>
-        <li>
-          <a href={sectionHref('#skills', pathname)}>Stack</a>
-        </li>
-        <li>
           <a href={sectionHref('#portfolio', pathname)}>Portfolio</a>
+        </li>
+        <li>
+          <a href={sectionHref('#about', pathname)}>My Story</a>
+        </li>
+        <li>
+          <a href={sectionHref('#skills', pathname)}>Skills & Tools</a>
         </li>
         <li>
           <a href={sectionHref('#contact', pathname)} className="nav-cta">

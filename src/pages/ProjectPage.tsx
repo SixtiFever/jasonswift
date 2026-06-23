@@ -15,9 +15,21 @@ export default function ProjectPage() {
           <>
             <p className="section-eyebrow">Portfolio</p>
             <h1 className="section-heading">{project.title}</h1>
-            <p className="project-page-placeholder">
-              Project details coming soon.
-            </p>
+            <p className="project-tab-description">{project.description}</p>
+            <div className="project-detail-sections">
+              <div className="project-detail-section">
+                <h2 className="project-detail-heading">Problem</h2>
+                <p className="project-detail-text">{project.problem}</p>
+              </div>
+              <div className="project-detail-section">
+                <h2 className="project-detail-heading">Solution</h2>
+                <p className="project-detail-text">{project.solution}</p>
+              </div>
+              <div className="project-detail-section">
+                <h2 className="project-detail-heading">Outcome</h2>
+                <p className="project-detail-text">{project.outcome}</p>
+              </div>
+            </div>
           </>
         ) : (
           <>

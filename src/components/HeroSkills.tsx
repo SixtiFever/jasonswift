@@ -4,12 +4,14 @@ import firebaseLogo from '../assets/logos/firebase.png'
 import sketchLogo from '../assets/logos/sketch.png'
 import typescriptLogo from '../assets/logos/typescript.png'
 import vscodeLogo from '../assets/logos/vscode.png'
+import expoLogo from '../assets/logos/expo.png'
 
 const SKILLS = [
   { name: 'React Native', Icon: ReactNativeIcon },
   { name: 'TypeScript', Icon: TypeScriptIcon },
   { name: 'Cursor IDE', Icon: CursorIcon },
   { name: 'VSC', Icon: VSCodeIcon },
+  { name: 'Expo', Icon: ExpoIcon },
   { name: 'Firebase', Icon: FirebaseIcon },
   { name: 'Sketch App', Icon: SketchIcon },
 ] as const
@@ -33,6 +35,10 @@ function ReactNativeIcon() {
 
 function FirebaseIcon() {
   return <SkillLogoImage src={firebaseLogo} />
+}
+
+function ExpoIcon() {
+  return <SkillLogoImage src={expoLogo} />
 }
 
 function TypeScriptIcon() {

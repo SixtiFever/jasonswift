@@ -1,19 +1,8 @@
-import { Fragment, useEffect } from 'react'
+import { useEffect } from 'react'
 import HeroSkills from './components/HeroSkills'
+import ProjectTabs from './components/ProjectTabs'
 import SiteNav from './components/SiteNav'
-import { PROJECTS } from './data/projects'
 import './LandingPage.css'
-
-const MARQUEE_ITEMS = [
-  'React',
-  'TypeScript',
-  'React Native',
-  'Firebase',
-  'Expo',
-  'Microsoft 365',
-  'React Flow',
-  'Product Design',
-]
 
 const SKILL_GROUPS = [
   {
@@ -22,37 +11,45 @@ const SKILL_GROUPS = [
       { name: 'React', strong: true },
       { name: 'React Native', strong: true },
       { name: 'TypeScript', strong: true },
-      { name: 'Expo' },
-      { name: 'React Flow' },
-      { name: 'React Konva' },
-      { name: 'React Native Vision Camera' },
-      { name: 'React Native Video' },
+      { name: 'Expo', strong: true },
+      { name: 'React Flow', strong: true },
+      { name: 'HTML', strong: true },
+      { name: 'CSS', strong: true },
+      { name: 'JavaScript', strong: true },
+      { name: 'Python' },
     ],
   },
   {
     title: 'Backend & Platform',
     skills: [
+      { name: 'Cursor IDE', strong: true },
       { name: 'Firebase', strong: true },
+      { name: 'Google Cloud', strong: true },
       { name: 'Microsoft 365', strong: true },
+      { name: 'Visual Studio Code', strong: true },
       { name: 'Git / GitHub', strong: true },
-      { name: 'REST APIs' },
-      { name: 'Node.js' },
-      { name: 'Product Design' },
-      { name: 'Rapid Prototyping' },
-      { name: 'Front-end Engineering' },
+      { name: 'Google Cloud AI', strong: true },
+    ],
+  },
+  {
+    title: 'AI Skills',
+    skills: [
+      { name: 'Agentic Programming', strong: true },
+      { name: 'Document Intelligence' },
+      { name: 'Copilot Studio' },
+      { name: 'Generative AI' },
     ],
   },
   {
     title: 'Process & Craft',
     skills: [
-      { name: 'Idea to Prototype', strong: true },
-      { name: 'Creative Problem Solving', strong: true },
-      { name: 'Agile / Scrum' },
-      { name: 'UX Design' },
-      { name: 'Visual Quality' },
+      { name: 'Sketch App', strong: true },
+      { name: 'Wireframing', strong: true },
+      { name: 'UX Design', strong: true },
+      { name: 'UI Design', strong: true },
+      { name: 'Product Design' },
+      { name: 'Rapid Prototyping' },
       { name: 'User-facing Features' },
-      { name: 'Tech for Good' },
-      { name: 'Start-ups' },
     ],
   },
 ]
@@ -90,20 +87,6 @@ function DownloadIcon() {
         strokeLinejoin="round"
       />
     </svg>
-  )
-}
-
-function MarqueeTrack() {
-  const items = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS]
-  return (
-    <div className="marquee-track">
-      {items.map((item, index) => (
-        <Fragment key={`${item}-${index}`}>
-          <span>{item}</span>
-          <span className="dot">✦</span>
-        </Fragment>
-      ))}
-    </div>
   )
 }
 
@@ -155,18 +138,23 @@ export default function LandingPage() {
           </div>
           <HeroSkills />
         </div>
-        <div className="hero-marquee">
-          <MarqueeTrack />
-        </div>
       </div>
+
+      <section id="portfolio">
+        <p className="section-eyebrow">Selected work</p>
+        <h2 className="section-heading">
+          Projects I've built from idea to <em>prototype</em>
+        </h2>
+        <ProjectTabs />
+      </section>
 
       <section id="about">
         <div className="about-left">
-          <p className="section-eyebrow">About me</p>
+          <p className="section-eyebrow">My story</p>
           <h2 className="section-heading">
-            Programming is
+            An Unexpected
             <br />
-            <em>creative</em>.
+            <em>Journey</em>.
           </h2>
           <p
             className="about-text"
@@ -177,13 +165,10 @@ export default function LandingPage() {
               marginBottom: '1.2rem',
             }}
           >
-            I currently work as a Microsoft 365 consultant at a fast-growing digital
-            transformation consultancy. In my spare time I enjoy developing mobile apps, each
-            built from the ground up —{' '}
-            <strong style={{ color: 'var(--ink)', fontWeight: 600 }}>
-              idea to prototype
-            </strong>{' '}
-            in a React Native, TypeScript, and Firebase stack.
+            At 19, my dream of joining the Royal Marines was left in tatters by a knee injury.
+            Following this, I moved to London and spent years working across various roles until
+            2020, when COVID hit. I then left my London job and flat, moving home to Petersfield
+            to spend lockdown with my parents.
           </p>
           <p
             className="about-text"
@@ -194,63 +179,26 @@ export default function LandingPage() {
               marginBottom: '1.2rem',
             }}
           >
-            I believe programming is one of the most creative activities for humans — the
-            medium is numbers and logic instead of paint brushes and notes. I've worked across{' '}
-            <strong style={{ color: 'var(--ink)', fontWeight: 600 }}>
-              product design, front-end engineering, and rapid prototyping
-            </strong>{' '}
-            to ship user-facing features with high visual quality.
+            During lockdown I reflected on my career, realising I wasn&apos;t on a path that
+            aligned with my best attributes - Creativity, communication and problem solving.
+            These had frequently manifested themselves as novel app ideas to solve problems. I
+            would wireframe, design, brand, create narrative documents and pitch decks for these
+            concepts. But I couldn&apos;t develop them. I knew if I could add development skills,
+            I&apos;d be in a great position to pursue a career where I can build real apps to
+            solve genuine problems that can scale big. So I enrolled to study Computer Science at
+            University of Exeter.
           </p>
           <p
             className="about-text"
             style={{ color: 'var(--muted)', fontSize: '1.05rem', lineHeight: 1.75 }}
           >
-            My journey is unconventional. At 18 I joined the Royal Marines, then worked in
-            London until COVID prompted a return to education. In 2024 I graduated from the
-            University of Exeter with a 1st Class Honours in Computer Science. Outside of tech
-            I'm drawn to cosmology, philosophy, and start-ups that add genuine value to people's
-            lives.
+            After 3 years of study I graduated with a First Class Honours. My final year project, a
+            loyalty app for independent cafes, achieved 85%. I&apos;m proud of it, and you can
+            find it on my portfolio above! Following uni I went straight into a Graduate
+            Consulting position. I am now looking to take my next step, working at an early to mid
+            stage venture where I can use my creative, technical and communication skills to
+            focus on improving product.
           </p>
-        </div>
-        <div className="about-right">
-          <div className="about-stats">
-            <div className="stat">
-              <div className="stat-number">2024</div>
-              <div className="stat-label">Graduated Exeter</div>
-            </div>
-            <div className="stat" style={{ background: 'var(--violet)' }}>
-              <div className="stat-number" style={{ color: 'var(--lime)' }}>
-                1st
-              </div>
-              <div className="stat-label" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                Class Honours
-              </div>
-            </div>
-            <div className="stat" style={{ background: 'var(--lime)' }}>
-              <div className="stat-number" style={{ color: 'var(--ink)' }}>
-                3
-              </div>
-              <div className="stat-label" style={{ color: 'rgba(14,14,14,0.6)' }}>
-                Apps built solo
-              </div>
-            </div>
-            <div className="stat">
-              <div className="stat-number">M365</div>
-              <div className="stat-label">Current focus</div>
-            </div>
-          </div>
-          <div className="availability-tag">
-            <span
-              style={{
-                width: 8,
-                height: 8,
-                borderRadius: '50%',
-                background: 'var(--coral)',
-                display: 'inline-block',
-              }}
-            />
-            Microsoft 365 consultant — building prototypes on the side
-          </div>
         </div>
       </section>
 
@@ -270,40 +218,6 @@ export default function LandingPage() {
                     className={`skill-pill${skill.strong ? ' strong' : ''}`}
                   >
                     {skill.name}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="portfolio">
-        <p className="section-eyebrow">Selected work</p>
-        <h2 className="section-heading">
-          Projects I've built from idea to <em>prototype</em>
-        </h2>
-        <div className="portfolio-grid">
-          {PROJECTS.map((project) => (
-            <div key={project.slug} className="project-card">
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                }}
-              >
-                <span className="project-number">{project.number}</span>
-                <span className="project-tag" style={project.tagStyle}>
-                  {project.tag}
-                </span>
-              </div>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <div className="project-tech">
-                {project.tech.map((tech) => (
-                  <span key={tech} className="tech-badge">
-                    {tech}
                   </span>
                 ))}
               </div>
