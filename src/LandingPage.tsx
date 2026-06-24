@@ -242,7 +242,7 @@ export default function LandingPage() {
             Happy to <em>chat</em>.
           </h2>
           <p className="contact-intro">
-            Open to conversations about reachout however you want.
+            Open to conversations. Reach out via email, LinkedIn or phone.
           </p>
           <div className="contact-details">
             <a href="mailto:jdswift94@gmail.com" className="contact-detail-link">
