@@ -80,6 +80,27 @@ nav {
 
 .nav-links a:hover { color: var(--violet); }
 
+.nav-outline-btn {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  padding: 0.45rem 1.1rem;
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.nav-outline-btn:hover {
+  background: var(--ink);
+  color: var(--lime);
+  border-color: var(--ink);
+}
+
 .nav-cta {
   background: var(--ink);
   color: var(--lime) !important;
@@ -425,6 +446,15 @@ section.visible { opacity: 1; transform: translateY(0); }
 .about-text p strong { color: var(--ink); font-weight: 600; }
 
 .about-right { padding-top: 0.5rem; }
+
+.about-photo {
+  width: 75%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1.5px solid var(--ink);
+  object-fit: cover;
+}
 
 .about-stats {
   display: grid;
@@ -877,7 +907,34 @@ section.visible { opacity: 1; transform: translateY(0); }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: center;
+  align-items: start;
+}
+
+.contact-intro {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  max-width: 32rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.contact-detail-link {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.15s;
+  width: fit-content;
+}
+
+.contact-detail-link:hover {
+  color: var(--violet);
 }
 
 #contact .contact-links {
@@ -899,6 +956,18 @@ section.visible { opacity: 1; transform: translateY(0); }
   font-size: 0.9rem;
   transition: background 0.15s, color 0.15s;
   border-radius: 8px;
+}
+
+button.contact-link-item,
+button.btn-fill,
+button.btn-ghost {
+  font: inherit;
+  cursor: pointer;
+}
+
+button.contact-link-item {
+  width: 100%;
+  text-align: left;
 }
 
 .contact-link-item:hover { background: var(--ink); color: var(--lime); }
@@ -944,6 +1013,7 @@ footer strong { color: var(--ink); font-weight: 600; }
   .hero-main { max-width: 100%; }
   section { padding: 4rem 1.5rem; }
   #about, #contact { grid-template-columns: 1fr; gap: 3rem; }
+  .about-right { order: -1; }
   .skills-grid, .portfolio-grid { grid-template-columns: 1fr; }
   .project-tab-panel { grid-template-columns: 1fr; gap: 2rem; }
   .project-page { padding: calc(var(--nav-height) + 3rem) 1.5rem 3rem; }

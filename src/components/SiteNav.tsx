@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
+import { useCvModal } from '../context/CvModalContext'
 
 function sectionHref(hash: string, pathname: string) {
   return pathname === '/' ? hash : `/${hash}`
@@ -6,6 +7,7 @@ function sectionHref(hash: string, pathname: string) {
 
 export default function SiteNav() {
   const { pathname } = useLocation()
+  const { openCvModal } = useCvModal()
 
   return (
     <nav>
@@ -21,6 +23,11 @@ export default function SiteNav() {
         </li>
         <li>
           <a href={sectionHref('#skills', pathname)}>Skills & Tools</a>
+        </li>
+        <li>
+          <button type="button" className="nav-outline-btn" onClick={openCvModal}>
+            View CV
+          </button>
         </li>
         <li>
           <a href={sectionHref('#contact', pathname)} className="nav-cta">

@@ -1,7 +1,9 @@
 import { useEffect } from 'react'
+import mePhoto from './assets/me/me.png'
 import HeroSkills from './components/HeroSkills'
 import ProjectTabs from './components/ProjectTabs'
 import SiteNav from './components/SiteNav'
+import { useCvModal } from './context/CvModalContext'
 import './LandingPage.css'
 
 const SKILL_GROUPS = [
@@ -56,41 +58,41 @@ const SKILL_GROUPS = [
 
 
 const CONTACT_LINKS = [
-  { label: 'View CV (coming soon)', href: '#' },
-  { label: 'Thoughts', href: '#' },
-  { label: 'LinkedIn', href: '#' },
-  { label: 'GitHub', href: '#' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jasondswift/' },
+  { label: 'GitHub', href: 'https://github.com/SixtiFever' },
 ]
 
-function ArrowIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-      <path
-        d="M3 7h8M8 4l3 3-3 3"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
+// function ArrowIcon() {
+//   return (
+//     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+//       <path
+//         d="M3 7h8M8 4l3 3-3 3"
+//         stroke="currentColor"
+//         strokeWidth="1.8"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       />
+//     </svg>
+//   )
+// }
 
-function DownloadIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-      <path
-        d="M7 1v8M4 7l3 3 3-3M2 12h10"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
+// function DownloadIcon() {
+//   return (
+//     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+//       <path
+//         d="M7 1v8M4 7l3 3 3-3M2 12h10"
+//         stroke="currentColor"
+//         strokeWidth="1.8"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       />
+//     </svg>
+//   )
+// }
 
 export default function LandingPage() {
+  const { openCvModal } = useCvModal()
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -128,12 +130,12 @@ export default function LandingPage() {
             <div className="hero-actions">
               <a href="#portfolio" className="btn-fill">
                 Personal Projects
-                <ArrowIcon />
+                {/* <ArrowIcon /> */}
               </a>
-              <a href="#contact" className="btn-ghost">
-                <DownloadIcon />
+              <button type="button" className="btn-ghost" onClick={openCvModal}>
+                {/* <DownloadIcon /> */}
                 View CV
-              </a>
+              </button>
             </div>
           </div>
           <HeroSkills />
@@ -200,6 +202,13 @@ export default function LandingPage() {
             focus on improving product.
           </p>
         </div>
+        <div className="about-right">
+          <img
+            src={mePhoto}
+            alt="Jason Swift on a boat"
+            className="about-photo"
+          />
+        </div>
       </section>
 
       <section id="skills">
@@ -230,24 +239,33 @@ export default function LandingPage() {
         <div>
           <p className="section-eyebrow">Get in touch</p>
           <h2 className="section-heading">
-            Let's build
-            <br />
-            something <em>great</em>.
+            Happy to <em>chat</em>.
           </h2>
-          <p
-            className="contact-big-email"
-            style={{ cursor: 'default' }}
-          >
-            Open to conversations about creative problem solving, prototypes, and tech for good.
+          <p className="contact-intro">
+            Open to conversations about reachout however you want.
           </p>
-          <a href="#" className="btn-fill">
-            <DownloadIcon />
-            View CV (coming soon)
-          </a>
+          <div className="contact-details">
+            <a href="mailto:jdswift94@gmail.com" className="contact-detail-link">
+              jdswift94@gmail.com
+            </a>
+            <a href="tel:+447765994827" className="contact-detail-link">
+              07765 994 827
+            </a>
+          </div>
         </div>
         <div className="contact-links">
+          <button type="button" className="contact-link-item" onClick={openCvModal}>
+            View CV
+            <span>↗</span>
+          </button>
           {CONTACT_LINKS.map((link) => (
-            <a key={link.label} href={link.href} className="contact-link-item">
+            <a
+              key={link.label}
+              href={link.href}
+              className="contact-link-item"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {link.label}
               <span>↗</span>
             </a>
