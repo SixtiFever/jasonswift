@@ -13,6 +13,11 @@ import tagScreenshot3 from '../assets/tag/31.png'
 import tagScreenshot4 from '../assets/tag/32.png'
 import tagScreenshot5 from '../assets/tag/33.png'
 import qwibblScreenshot1 from '../assets/qwibbl/1.png'
+import qwibblScreenshot2 from '../assets/qwibbl/2.png'
+import qwibblScreenshot3 from '../assets/qwibbl/3.png'
+import qwibblScreenshot4 from '../assets/qwibbl/4.png'
+import qwibblScreenshot5 from '../assets/qwibbl/5.png'
+import qwibblScreenshot6 from '../assets/qwibbl/6.png'
 import priaDemoVideo from '../assets/pria/1.mov'
 import priaScreenshot2 from '../assets/pria/2.png'
 import priaScreenshot3 from '../assets/pria/3.png'
@@ -64,6 +69,7 @@ export const PROJECTS: Project[] = [
       'Gemini Spark',
       'OpenGraph',
       'VSC',
+      'Cursor',
     ],
     screenshots: [
       priaScreenshot2,
@@ -81,13 +87,13 @@ export const PROJECTS: Project[] = [
     tag: 'Mobile',
     title: 'Tag — Video Political Debates',
     description:
-      'A video conversation app for small, good-faith political debates on specific topics.',
+      'A video conversation app for small, good-faith political debates on specific topics. Built mainly for fun and upskilling.',
     problem:
       'Political discourse online is often toxic, polarised, and bad-faith — making it hard to have open, collaborative discussion on the issues that matter.',
     solution:
-      'Built Tag, a video conversation app where users join small debates on specific topics — designed to encourage more collaborative, open, and good-faith discussion. Built solo in React Native, TypeScript, and Firebase for fun and upskilling.',
+      'Built Tag, a video conversation app where users join small debates on specific topics — designed to encourage more collaborative, open, and good-faith discussion.',
     outcome:
-      'Delivered a working prototype that explored how structured, video-first debate could offer a healthier alternative to toxic political discourse — while strengthening my end-to-end mobile development skills.',
+      'Build an MVP and launched for internal testing on TestFlight and Google Play Console. Received positive feedack on concept and design.',
     tech: [
       'React Native',
       'TypeScript',
@@ -111,18 +117,18 @@ export const PROJECTS: Project[] = [
     tag: 'Final Year Project',
     title: 'LoyalBean — Digital Cafe Loyalty',
     description:
-      'A loyalty app for independent cafes — my Exeter final year project.',
+      'A loyalty app for independent cafes, conceptualised, designed and built for my Computer Science final year project.',
     problem:
-      'Physical loyalty cards are easy to lose and forget, leaving customers without rewards and independent cafes without a modern way to build repeat business.',
+      'Physical loyalty cards are easy to lose, forget, and provides a generic loyalty for all customers, despite differing preferences.',
     solution:
-      'Designed and built LoyalBean, a mobile loyalty app that digitises stamp cards and helps cafes nurture loyal communities — using React Native, TypeScript, and Firebase.',
+      'Designed and built LoyalBean, a mobile loyalty app that digitises stamp cards, offers personalised rewards, tracks loyalty campaigns, and helps cafes create loyal communities.',
     outcome:
-      'Graduated with a 1st Class Honours. This was my first end-to-end project from original problem to working prototype, and confirmed that combining creative problem solving with technical build is what I want to do.',
+      'Achieved grade of 86%, helping me graduate with 1st Class Honours. This was my first end-to-end project from original problem to working prototype. It confirmed that combining creative problem solving with technical build is what I want to do.',
     tech: [
       'React Native',
       'TypeScript',
       'Firebase (auth, storage, firestore)',
-      'VSC/Cursor IDE',
+      'VSC',
       'Expo',
     ],
     screenshots: [
@@ -148,12 +154,15 @@ export const PROJECTS: Project[] = [
     solution:
       'Designed Qwibbl around the idea that one person\'s junk is another\'s treasure — a second-hand trading platform with a flexi-bid system that lets users make flexible offers on items instead of being locked into fixed listing prices. Concept design only, created in Sketch.',
     outcome:
-      'Delivered a complete concept design that explored how flexible bidding could make second-hand trading more approachable, negotiable, and affordable for both buyers and sellers.',
+      'Delivered a complete wireframe, logo and concept design that explored how flexible bidding could make second-hand trading more approachable, negotiable, and affordable for both buyers and sellers.',
     tech: ['Sketch App'],
     screenshots: [
       qwibblScreenshot1,
-      '/projects/qwibbl/02.png',
-      '/projects/qwibbl/03.png',
+      qwibblScreenshot2,
+      qwibblScreenshot3,
+      qwibblScreenshot4,
+      qwibblScreenshot5,
+      qwibblScreenshot6,
     ],
   },
 ]
